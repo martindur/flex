@@ -1,3 +1,4 @@
-name: Flex
+name: dur's Tech Blog
 markdown: redcarpet
+mathjax: true
 pygments: true
