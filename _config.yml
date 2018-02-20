@@ -1,4 +1,4 @@
 name: dur's Tech Blog
-markdown: redcarpet
+markdown: kramdown
 mathjax: true
 pygments: true
