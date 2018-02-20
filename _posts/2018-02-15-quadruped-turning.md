@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Quadruped - Turn Gaits with Blender Drivers
+title: Quadruped Rig - Turn Gaits with Blender Drivers
+mathjax: true
 published: true
 ---
 
