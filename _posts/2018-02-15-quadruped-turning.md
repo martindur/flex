@@ -27,11 +27,11 @@ Animating a quadruped comes with its own obstacles. Our project revolves around 
 
 On a more technical note, when driven by root motion, how much and how fast does your animal turn? These are questions automatically handled in our proposed solution.
 
-<img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/snowy-intro.gif" width="256" height="256" />
+<p align="center"><img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/snowy-intro.gif" width="512" height="512" /></p>
 
 In our solution, essentially we just define a circle, or arc, that the quadruped walks along. We have a single control, which is the radius of this circle. It goes into minus to define whether the turn is left or right. This is a useful control to interactively change, as we get a live preview of various degrees of rotation. Depending on whether you're animating a walk or a gallop, this can end up looking weird, or ideal.
 
-<img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/turning_snowy.gif" width="256" height="256" />
+<p align="center"><img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/turning_snowy.gif" width="512" height="512" /></p>
 
 The interactive control and live preview is really the strength of drivers, and what I'm going to introduce in this post.
 
@@ -65,7 +65,7 @@ $$y = sin(root)$$
 
 Which produces this example:
 
-<img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/unit-circle.gif" width="256" height="256" />
+<p align="center"><img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/unit-circle.gif" width="512" height="512" /></p>
 
 This certainly has some effect, but what you might notice is that *rootArc* is not moving from the correct position, or in the correct direction. To get this right, we need to do a bit of offsetting. We offset by adding the radius on the x-axis, and inversing our equations.
 
@@ -73,13 +73,13 @@ $$x = -cos(root) + r$$
 
 $$y = -sin(root)$$
 
-<img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/arc-circle.gif" width="256" height="256" />
+<p align="center"><img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/arc-circle.gif" width="512" height="512" /></p>
 
 Before we have a viable solution, we need to address the orientation of our *rootArc*. The orientation is the distance travelled over the inverse of the radius.
 
 $$z_r = \frac{root}{-r}$$
 
-<img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/arc-circle-with-orient.gif" width="256" height="256"/>
+<p align="center"><img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/arc-circle-with-orient.gif" width="512" height="512"/></p>
 
 This piece gives us the last piece of an almost viable solution. However, we would like to add an additional feature, which is interactively changing the radius of the circle. Instead of adding the radius, we subtract the inverse of the radius. This is so it will work regardless whether the radius is minus or not, and will change left/right depending on it. Other than that, instead of simply taking the cosine and sine of root, we divide root by radius first, to shrink down the distance travelled. To change the size of our circle, we lastly multiply by the radius.
 
@@ -91,7 +91,7 @@ $$z_r = \frac{root}{-r}$$
 
 And then we are left with the final result, where we can interactively change the radius, and the driven properties of *rootArc* will adapt.
 
-<img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/arc-circle-with-r.gif" width="256" height="256"/>
+<p align="center"><img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/arc-circle-with-r.gif" width="512" height="512"/></p>
 
 #### The driver setup in Blender
 
