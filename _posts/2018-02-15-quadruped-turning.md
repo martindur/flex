@@ -60,6 +60,7 @@ Also known as the radian measure. As we are dealing with radian degrees, and not
 If *root* is the bone we translate, *rootArc* is the bone that is driven, which means we need to tell it what to drive by. With a radius of 1m, this is as simple as putting the root's forward position in cosine(x) and sine(y).
 
 $$x = cos(root)$$
+
 $$y = sin(root)$$
 
 Which produces this example:
@@ -69,6 +70,7 @@ Which produces this example:
 This certainly has some effect, but what you might notice is that *rootArc* is not moving from the correct position, or in the correct direction. To get this right, we need to do a bit of offsetting. We offset by adding the radius on the x-axis, and inversing our equations.
 
 $$x = -cos(root) + r$$
+
 $$y = -sin(root)$$
 
 <img src="https://raw.githubusercontent.com/martindur/martindur.github.io/master/images/arc-circle.gif" width="256" height="256" />
@@ -82,7 +84,9 @@ $$z_r = \frac{root}{-r}$$
 This piece gives us the last piece of an almost viable solution. However, we would like to add an additional feature, which is interactively changing the radius of the circle. Instead of adding the radius, we subtract the inverse of the radius. This is so it will work regardless whether the radius is minus or not, and will change left/right depending on it. Other than that, instead of simply taking the cosine and sine of root, we divide root by radius first, to shrink down the distance travelled. To change the size of our circle, we lastly multiply by the radius.
 
 $$x = r(-cos(\frac{root}{r}) - (-r))$$
+
 $$y = r(-sin(\frac{root}{r}))$$
+
 $$z_r = \frac{root}{-r}$$
 
 And then we are left with the final result, where we can interactively change the radius, and the driven properties of *rootArc* will adapt.
