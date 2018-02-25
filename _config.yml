@@ -2,3 +2,4 @@ name: dur's Tech Blog
 markdown: kramdown
 mathjax: true
 pygments: true
+google_analytics: UA-114728337-1
