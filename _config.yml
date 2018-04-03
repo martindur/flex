@@ -5,4 +5,3 @@ disqus:
     shortname: dur
 mathjax: true
 pygments: true
-google_analytics: UA-114728337-1
