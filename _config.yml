@@ -1,5 +1,8 @@
 name: dur's Tech Blog
 markdown: kramdown
+comments: true
+disqus:
+    shortname: dur
 mathjax: true
 pygments: true
 google_analytics: UA-114728337-1
