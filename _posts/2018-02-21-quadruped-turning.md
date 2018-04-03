@@ -125,7 +125,3 @@ zRot = root/-r
 Essentially, we just programmed our own rigging behaviour!
 
 This is the end of Part I. I hope it gave some insights into the fundamental idea of our rig, as well as helped introduce some knowledge about drivers and more advanced rigging concepts.
-
-## Part II: Advancing to the entire quadruped body
-
-### TBD
